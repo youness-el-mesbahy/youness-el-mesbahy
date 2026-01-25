@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/landing-page/sections/Navbar.astro";
+import Hero from "../components/landing-page/sections/Hero.astro";
+import {Github, Instagram, Linkedin} from "@lucide/astro";
+import Projects from "../components/landing-page/sections/Projects.astro";
+import Skills from "../components/landing-page/sections/Skills.astro";
+import Contact from "../components/landing-page/sections/Contact.astro";
+import ContactForm from "../components/landing-page/sections/ContactForm.astro";
 ---
 
 <Layout>
-	<Welcome />
+    <div class="fixed flex items-center gap-4 -bottom-4 right-10 origin-top-right rotate-90">
+        <a
+            href="mailto:younessmesbahy@gmail.com"
+            class="tracking-[4px] text-xs hover:text-oregon-blue-1000 hover:-translate-x-1 duration-300"
+        >younessmesbahy@gmail.com</a>
+        <p class="h-[2px] w-[128px] bg-black"></p>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 fixed left-10 bottom-0">
+        <a href="https://www.instagram.com/youness.el.mesbahy/" target="_blank" rel="noreferrer">
+            <Instagram/>
+        </a>
+        <a href="https://www.linkedin.com/in/youness-el-mesbahy-7327992b8" target="_blank" rel="noreferrer">
+            <Linkedin/>
+        </a>
+        <a href="https://github.com/youness-el-mesbahy" target="_blank" rel="noreferrer">
+            <Github/>
+        </a>
+        <p class="w-[2px] h-[128px] bg-black"></p>
+    </div>
+    <div class="h-full">
+        <Navbar/>
+        <Hero/>
+    </div>
+    <Projects/>
+    <Skills/>
+    <Contact/>
+    <ContactForm/>
 </Layout>
+
