@@ -1,0 +1,44 @@
+---
+import Container from "../../ui/Container.astro";
+import {Image} from "astro:assets";
+import HeroImage from "../../../assets/my-img.jpeg"
+import SectionHeader from "../../ui/SectionHeader.astro";
+import {Download} from "@lucide/astro"
+import {getCollection} from "astro:content";
+import Button from "../../ui/Button.astro";
+import ExperienceEntry from "./Experience/ExperienceEntry.astro";
+const projects = await getCollection("projects");
+---
+
+<section id="about" class="py-16">
+    <Container>
+        <SectionHeader
+                title="2.&nbsp;Education"
+                subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
+        />
+
+        <div class="flex gap-12 items-start mt-20 justify-center">
+
+            <div class="w-8 h-64 bg-carbon-1400 mr-12 "></div>
+
+            <ExperienceEntry
+                dateRange="Feb 2024 - Feb 2026"
+                title="Full-stack Developer"
+                company="Paper Studio AI"
+                location="Paper Studio AI"
+                heading="Place of education/job"
+            >
+                <p class="mb-0.5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                    Ipsum</p>
+                <p class="mb-0.5">has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown </p>
+                <p class="mb-0.5">printer took a galley</p>
+            </ExperienceEntry>
+        </div>
+
+
+    </Container>
+</section>
+
+
+
