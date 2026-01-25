@@ -1,0 +1,50 @@
+[
+  {
+    "id": "boutique-electronique-en-ligne-2025",
+    "title": "Boutique Electronique en Ligne",
+    "description": "A complete technical solution for selling electronic products. Developed an e-commerce store with advanced stock management, detailed technical product sheets, secure payment integration, and customer support tailored to the technical needs of the electronics sector.",
+    "technologies": [
+      {
+        "name": "WordPress",
+        "icon": "https://cdn.simpleicons.org/wordpress/21759B"
+      },
+      {
+        "name": "WooCommerce",
+        "icon": "https://cdn.simpleicons.org/woocommerce/96588A"
+      }
+    ],
+    "year": 2025
+  },
+  {
+    "id": "dentiste-registre-2024",
+    "title": "Dentiste Registre",
+    "description": "A dental clinic management system built from a Bootstrap template. Manages patients, appointments, consultations, documents, and features a role-based authentication system.",
+    "technologies": [
+      {
+        "name": "PHP",
+        "icon": "https://cdn.simpleicons.org/php/777BB4"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://cdn.simpleicons.org/mysql/4479A1"
+      }
+    ],
+    "year": 2024
+  },
+  {
+    "id": "systeme-de-gestion-electronique-de-documents-2024",
+    "title": "Systeme de Gestion Electronique de Documents (GED)",
+    "description": "A web application for document management featuring hierarchical folder structures, file upload/download, role and folder-based access control, search functionality, and an explorer-style interface.",
+    "technologies": [
+      {
+        "name": "PHP",
+        "icon": "https://cdn.simpleicons.org/php/777BB4"
+      },
+      {
+        "name": "MySQL",
+        "icon": "https://cdn.simpleicons.org/mysql/4479A1"
+      }
+    ],
+    "year": 2024
+  }
+]
