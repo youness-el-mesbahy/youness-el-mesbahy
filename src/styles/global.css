@@ -58,7 +58,7 @@
 }
 
 html {
-    font-family: "Open Sans";
+    font-family: "Open Sans",sans-serif;
     font-weight: 400;
     color: var(--carbon-fiber-shade-500);
     background: #F4F4F4;
