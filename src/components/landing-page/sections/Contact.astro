@@ -1,0 +1,41 @@
+---
+import Container from "../../ui/Container.astro";
+import SectionHeader from "../../ui/SectionHeader.astro";
+import Card from "../../ui/Card.astro";
+import {Copy, MoveRight, Send} from "@lucide/astro";
+import Badge from "../../ui/Badge.astro";
+import JavaScript from "../../ui/icons/JavaScript.astro";
+import Button from "../../ui/Button.astro";
+
+---
+
+<section id="contact" class="py-16 pb-64">
+    <Container>
+        <SectionHeader title="5.&nbsp;What's Next ?" />
+
+        <div class="mt-20 mx-auto text-center w-[38%]">
+            <h3 class="font-semibold text-4xl">Get In Touch</h3>
+            <p class="mt-4 text-lg">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+        <div class="flex justify-center gap-8 mt-10">
+                <Button>
+                    <Send size="20px" />
+                    &nbsp;Contact Me
+                </Button>
+            <Button id="copy-email-contact" variant="secondary" aria-label="Copy email">
+                <Copy size="20px"/>
+                &nbsp;Copy Email
+            </Button>
+        </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    const copyBtn = document.getElementById('copy-email-contact');
+    copyBtn?.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText('younessmesbahy@gmail.com');
+        } catch (e) {
+        }
+    });
+</script>
