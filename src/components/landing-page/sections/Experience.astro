@@ -1,16 +1,12 @@
 ---
-import {Image} from "astro:assets";
-import HeroImage from "../../../assets/my-img.jpeg"
 import Section from "../Section.astro";
-import {Download} from "@lucide/astro"
 import {getCollection} from "astro:content";
-import Button from "../../ui/Button.astro";
 import ExperienceEntry from "./Experience/ExperienceEntry.astro";
-const projects = await getCollection("projects");
+const education = await getCollection("education");
 ---
 
 <Section
-        id="about"
+        id="education"
         title="2.&nbsp;Education"
         subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
 >
@@ -18,19 +14,25 @@ const projects = await getCollection("projects");
 
         <div class="w-8 h-64 bg-carbon-1400 mr-12 "></div>
 
-        <ExperienceEntry
-                dateRange="Feb 2024 - Feb 2026"
-                title="Full-stack Developer"
-                company="Paper Studio AI"
-                location="Paper Studio AI"
-                heading="Place of education/job"
-        >
-            <p class="mb-0.5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum</p>
-            <p class="mb-0.5">has been the industry's standard dummy text ever since the 1500s, when an
-                unknown </p>
-            <p class="mb-0.5">printer took a galley</p>
-        </ExperienceEntry>
+        <div class="space-y-14">
+            {education.map((entry) => (
+                    <ExperienceEntry
+                            dateRange={`${entry.data.startYear} - ${entry.data.endYear ?? "Present"}`}
+                            title={entry.data.heading}
+                            company={entry.data.institution}
+                            location={entry.data.location}
+                            heading={entry.data.title}
+                    >
+                        {entry.data.descriptionBlocks.map((block) => (
+                                <ul class="list-disc pl-5 space-y-1">
+                                    {block.items.map((item) => (
+                                            <li>{item}</li>
+                                    ))}
+                                </ul>
+                        ))}
+                    </ExperienceEntry>
+            ))}
+        </div>
     </div>
 </Section>
 

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "technicien-specialise-developpement-digital-web-full-stack",
+    "startYear": 2024,
+    "endYear": null,
+    "heading": "Technicien Spécialisé",
+    "title": "Développement Digital option Web Full Stack",
+    "institution": "CMC l'Oriental",
+    "location": "Nador",
+    "descriptionBlocks": [
+      {
+        "type": "list",
+        "items": [
+          "Conception et développement d'applications web responsives en utilisant HTML5, CSS3, JavaScript (ES6+)",
+          "Implémentation d'APIs RESTful avec Node.js et Express.js, intégration de bases de données MongoDB et PostgreSQL",
+          "Développement d'interfaces utilisateur dynamiques avec React.js (hooks, context API, Redux Toolkit)",
+          "Mise en œuvre de stratégies d'authentification et d'autorisation (JWT, OAuth 2.0)",
+          "Utilisation de Git pour le contrôle de version et collaboration via GitFlow",
+          "Déploiement d'applications sur des plateformes cloud (AWS, Heroku) avec Docker containerisation",
+          "Optimisation des performances front-end (lazy loading, code splitting, caching strategies)",
+          "Tests unitaires et d'intégration avec Jest, React Testing Library et Supertest"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "licence-english-studies-linguistics",
+    "startYear": 2023,
+    "endYear": 2024,
+    "heading": "Licence English Studies",
+    "title": "Linguistics",
+    "institution": "FPN",
+    "location": "Selouane",
+    "descriptionBlocks": [
+      {
+        "type": "list",
+        "items": [
+          "Analyse syntaxique et morphologique de corpus linguistiques anglais contemporains",
+          "Étude comparative des théories phonologiques génératives et optimality theory",
+          "Recherche sociolinguistique sur les variations dialectales dans les médias numériques",
+          "Méthodologie de recherche qualitative : entretiens semi-structurés et analyse de discours"
+        ]
+      }
+    ]
+  }
+]
