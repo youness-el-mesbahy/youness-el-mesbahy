@@ -1,6 +1,5 @@
 ---
-import Container from "../../ui/Container.astro";
-import SectionHeader from "../../ui/SectionHeader.astro";
+import Section from "../Section.astro";
 import Card from "../../ui/Card.astro";
 import {MoveRight} from "@lucide/astro";
 
@@ -8,23 +7,20 @@ import {getCollection} from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<section id="projects" class="py-16">
-    <Container>
-        <SectionHeader
-                title="2.&nbsp;Projects"
-                subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
-        />
-
-        <div class="my-16 flex justify-center  items-stretch gap-12">
-            {projects.map((project) => (
-                    <Card project={project}/>
-            ))}
-        </div>
-        <p class="flex items-center justify-center -mt-4">All Projects &nbsp;
-            <MoveRight/>
-        </p>
-    </Container>
-</section>
+<Section
+    id="projects"
+    title="2.&nbsp;Projects"
+    subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
+>
+    <div class="my-16 flex justify-center  items-stretch gap-12">
+        {projects.map((project) => (
+                <Card project={project}/>
+        ))}
+    </div>
+    <p class="flex items-center justify-center -mt-4">All Projects &nbsp;
+        <MoveRight/>
+    </p>
+</Section>
 
 
 

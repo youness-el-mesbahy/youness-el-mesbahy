@@ -1,0 +1,16 @@
+---
+import clsx from "clsx";
+import Container from "../ui/Container.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+
+const { id, className = "", title, subtitle } = Astro.props;
+
+const sectionClasses = clsx("py-24", className);
+---
+
+<section id={id} class={sectionClasses}>
+    <Container>
+        {title && <SectionHeader title={title} subtitle={subtitle} />}
+        <slot />
+    </Container>
+</section>

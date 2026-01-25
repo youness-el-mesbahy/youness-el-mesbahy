@@ -1,6 +1,5 @@
 ---
-import Container from "../../ui/Container.astro";
-import SectionHeader from "../../ui/SectionHeader.astro";
+import Section from "../Section.astro";
 
 import Badge from "../../ui/Badge.astro";
 import JavaScript from "../../ui/icons/JavaScript.astro";
@@ -10,28 +9,26 @@ const skills = await getCollection('skills')
 ---
 
 
-<section id="skills" class="py-16">
-    <Container>
-        <SectionHeader
-                title="4.&nbsp;Skills"
-                subtitle="Lorem Ipsu is simply dummy text of the printing and typesetting"
-        />
-        <div class="my-16 grid grid-cols-2 gap-y-[56px] px-32">
-            {
-                skills.map((skill, index) => (
-                        <>
-                            <h3 class="text-xl font-semibold">{skill.data.category}</h3>
-                            <div class="flex flex-wrap gap-4">
-                                {skill.data.items.map((item, index) => (
-                                        <Badge>
-                                            <img src={item.icon} width="18" height="18" />
-                                            <span>{item.name}</span>
-                                        </Badge>
-                                ))}
-                            </div>
-                        </>
-                ))
-            }
-        </div>
-    </Container>
-</section>
+<Section
+    id="skills"
+    title="4.&nbsp;Skills"
+    subtitle="Lorem Ipsu is simply dummy text of the printing and typesetting"
+>
+    <div class="my-16 grid grid-cols-2 gap-y-[56px] px-32">
+        {
+            skills.map((skill, index) => (
+                    <>
+                        <h3 class="text-xl font-semibold">{skill.data.category}</h3>
+                        <div class="flex flex-wrap gap-4">
+                            {skill.data.items.map((item, index) => (
+                                    <Badge>
+                                        <img src={item.icon} width="18" height="18" />
+                                        <span>{item.name}</span>
+                                    </Badge>
+                            ))}
+                        </div>
+                    </>
+            ))
+        }
+    </div>
+</Section>
