@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "category": "Frontend",
+    "items": [
+      {
+        "name": "JavaScript",
+        "icon": "https://cdn.simpleicons.org/javascript/F7DF1E"
+      },
+      {
+        "name": "ReactJS",
+        "icon": "https://cdn.simpleicons.org/react/61DAFB"
+      },
+      {
+        "name": "ReduxJS",
+        "icon": "https://cdn.simpleicons.org/redux/764ABC"
+      },
+      {
+        "name": "Bootstrap",
+        "icon": "https://cdn.simpleicons.org/bootstrap/7952B3"
+      },
+      {
+        "name": "TailwindCSS",
+        "icon": "https://cdn.simpleicons.org/tailwindcss/06B6D4"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "category": "Backend",
+    "items": [
+      {
+        "name": "Laravel",
+        "icon": "https://cdn.simpleicons.org/laravel/FF2D20"
+      },
+      {
+        "name": "ExpressJS",
+        "icon": "https://cdn.simpleicons.org/express/000000"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "category": "Database",
+    "items": [
+      {
+        "name": "MySQL",
+        "icon": "https://cdn.simpleicons.org/mysql/4479A1"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "https://cdn.simpleicons.org/mongodb/47A248"
+      }
+    ]
+  }
+]
