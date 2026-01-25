@@ -1,0 +1,58 @@
+---
+import { Copy, Send } from '@lucide/astro';
+import Button from '../../ui/Button.astro';
+import {Image} from "astro:assets"
+import HeroImage from "../../../assets/my-img.jpeg"
+---
+
+<section>
+    <div
+        class="container-xl mx-auto flex items-center justify-center gap-32 mt-32"
+    >
+        <div class="w-[43%]">
+            <div>
+
+                <h1 class="text-4xl mb-3 font-semibold">
+                    Building Scalable, Performant Full-Stack Applications
+                </h1>
+                <p class="text-base">
+                    I architect and deliver clean, maintainable code for
+                    fast-growing businesses.
+                </p>
+            </div>
+            <div class="flex gap-4 mt-[30px]">
+                    <Button>
+                        <Send size="20px" />
+                        &nbsp;Contact Me
+                    </Button>
+                <Button id="copy-email-hero" variant="secondary" aria-label="Copy email">
+                    <Copy size="20px"/>
+                    &nbsp;Copy Email
+                </Button>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="h-[360px] w-[360px] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">
+                <Image src={HeroImage}  alt="HeroImage" />
+            </div>
+            <div
+                class="h-[360px] w-[360px] absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"
+            >
+            </div>
+        </div>
+    </div>
+
+  
+</section>
+
+<script>
+    const copyBtn = document.getElementById('copy-email-hero');
+    copyBtn?.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText('younessmesbahy@gmail.com');
+        } catch (e) {
+        }
+    });
+</script>
+
+
