@@ -1,0 +1,59 @@
+---
+import Container from "../../ui/Container.astro";
+import {Image} from "astro:assets";
+import HeroImage from "../../../assets/my-img.jpeg"
+import SectionHeader from "../../ui/SectionHeader.astro";
+import {Download} from "@lucide/astro"
+import {getCollection} from "astro:content";
+import Button from "../../ui/Button.astro";
+const projects = await getCollection("projects");
+---
+
+<section id="about" class="py-16">
+    <Container>
+        <SectionHeader
+                title="2.&nbsp;About"
+                subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
+        />
+
+        <div class="mt-20 flex justify-center items-center gap-32 ">
+            <div class="w-[500px]">
+                <div class="space-y-3">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text
+                        ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It
+                    </p>
+                    <p>
+
+                        has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                        essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages,
+                    </p>
+                    <!--<p>-->
+                    <!--    and more recently with desktop publishing software like Aldus PageMaker including versions of-->
+                    <!--    Lorem Ipsum.-->
+                    <!--</p>-->
+                </div>
+                <Button className="mt-6">
+                    <Download size="20px"/>
+                    &nbsp; Download CV
+                </Button>
+            </div>
+            <div class="relative">
+                <div class="h-[300px] w-[300px] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">
+                    <Image src={HeroImage} alt="HeroImage"/>
+                </div>
+                <div
+                        class="h-[300px] w-[300px] absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"
+                >
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+
+
