@@ -10,9 +10,9 @@ const skills = await getCollection('skills')
 
 
 <Section
-    id="skills"
-    title="4.&nbsp;Skills"
-    subtitle="Lorem Ipsu is simply dummy text of the printing and typesetting"
+        id="skills"
+        title="4.&nbsp;Skills"
+        subtitle="Lorem Ipsu is simply dummy text of the printing and typesetting"
 >
     <div class="my-16 grid grid-cols-2 gap-y-[56px] px-32">
         {
@@ -22,7 +22,7 @@ const skills = await getCollection('skills')
                         <div class="flex flex-wrap gap-4">
                             {skill.data.items.map((item, index) => (
                                     <Badge>
-                                        <img src={item.icon} width="18" height="18" />
+                                        <img src={item.icon} width="18" height="18"/>
                                         <span>{item.name}</span>
                                     </Badge>
                             ))}

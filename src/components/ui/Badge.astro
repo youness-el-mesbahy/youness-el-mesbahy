@@ -2,15 +2,15 @@
 import HTML from "./icons/HTML.astro";
 import clsx from "clsx";
 
-const baseClasses="flex items-center gap-1 w-fit rounded-full"
+const baseClasses = "flex items-center gap-1 w-fit rounded-full"
 
-const badgeSizes={
-    small:"inline-block py-1 px-2 border  text-xs",
-    normal:"py-1 px-4 border  text-sm font-semibold gap-3"
+const badgeSizes = {
+    small: "inline-block py-1 px-2 border  text-xs",
+    normal: "py-1 px-4 border  text-sm font-semibold gap-3"
 }
 
-const {size="normal",className=""} = Astro.props;
+const {size = "normal", className = ""} = Astro.props;
 
-const badgeClasses=clsx(baseClasses,badgeSizes[size],className)
+const badgeClasses = clsx(baseClasses, badgeSizes[size], className)
 ---
 <span class={badgeClasses}><slot/></span>

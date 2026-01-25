@@ -58,7 +58,7 @@
 }
 
 html {
-    font-family: "Open Sans",sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
     color: var(--carbon-fiber-shade-500);
     background: #F4F4F4;
@@ -70,7 +70,7 @@ html {
     width: 1280px;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
