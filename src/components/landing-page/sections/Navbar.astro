@@ -1,0 +1,42 @@
+---
+import {Image} from "astro:assets"
+import myImage from "../../../assets/younesselmesbahy.jpg"
+
+import {Moon} from "@lucide/astro"
+---
+
+<header id="home" class="flex items-center justify-between mx-16 my-8">
+    <div class="flex items-center gap-3">
+        <div class="logo h-[36px] w-[36px] rounded-full overflow-hidden bg-gray-500">
+            <Image src={myImage} alt="my profile image"/>
+        </div>
+        <p>Youness El Mesbahy</p>
+    </div>
+    <nav class="inline-block">
+        <ul class="space-x-10">
+            <li class="inline-block"><a href="#home"><span
+                    class="text-oregon-blue-1200 inline-block">1.&nbsp;</span><span
+                    class="hover:text-oregon-blue-1200 hover: duration-300">Home</span></a></li>
+            <li class="inline-block"><a href="#projects"><span
+                    class="text-oregon-blue-1200 inline-block">2.&nbsp;</span><span
+                    class="hover:text-oregon-blue-1200 hover: duration-300">Projects</span></a></li>
+            <li class="inline-block"><a href="#about"><span
+                    class="text-oregon-blue-1200 inline-block">3.&nbsp;</span><span
+                    class="hover:text-oregon-blue-1200 hover: duration-300">About Me</span></a></li>
+            <li class="inline-block"><a href="#skills"><span
+                    class="text-oregon-blue-1200 inline-block">4.&nbsp;</span><span
+                    class="hover:text-oregon-blue-1200 hover: duration-300">Skills</span></a></li>
+            <li class="inline-block"><a href="#contact"><span
+                    class="text-oregon-blue-1200 inline-block">5.&nbsp;</span><span
+                    class="hover:text-oregon-blue-1200 hover: duration-300">Contact</span></a></li>
+        </ul>
+    </nav>
+    <div class="inline-block">
+        <div class="flex items-center gap-5">
+            <p>EN</p>
+            <p>
+                <Moon size="20"/>
+            </p>
+        </div>
+    </div>
+</header>
