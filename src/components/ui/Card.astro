@@ -3,12 +3,18 @@ import {MoveRight} from "@lucide/astro";
 import Badge from "./Badge.astro";
 
 const {project} = Astro.props
-const {title, description, technologies} = project.data;
+const {title, imageUrl, description, technologies} = project.data;
 ---
 
 <div class="relative w-[328px] py-4 px-5 rounded-lg border border-gray-200">
-    <div class=" w-[288px] h-[162px] aspect-video bg-gray-500 rounded-lg">
-    </div>
+    <img
+            src={imageUrl}
+            alt={title}
+            width="288"
+            height="162"
+            class="w-[288px] h-[162px] aspect-video rounded-lg object-cover bg-gray-100"
+            loading="lazy"
+    />
     <h3 class="text-lg mt-4">{title}</h3>
     <p class="text-sm mt-[6px] font-light">
         {description}

@@ -7,6 +7,7 @@ const projects = defineCollection({
     loader: file("src/contents/portfolio/projects/index.json"),
     schema: z.object({
         title: z.string(),
+        imageUrl: z.string().url(),
         description: z.string(),
         technologies: z.array(z.object({
             name: z.string(),

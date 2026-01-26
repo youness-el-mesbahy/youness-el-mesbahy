@@ -2,6 +2,7 @@
   {
     "id": "boutique-electronique-en-ligne-2025",
     "title": "Boutique Electronique en Ligne",
+    "imageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=225&fit=crop",
     "description": "A complete technical solution for selling electronic products. Developed an e-commerce store with advanced stock management, detailed technical product sheets, secure payment integration, and customer support tailored to the technical needs of the electronics sector.",
     "technologies": [
       {
@@ -18,6 +19,7 @@
   {
     "id": "dentiste-registre-2024",
     "title": "Dentiste Registre",
+    "imageUrl": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=225&fit=crop",
     "description": "A dental clinic management system built from a Bootstrap template. Manages patients, appointments, consultations, documents, and features a role-based authentication system.",
     "technologies": [
       {
@@ -34,6 +36,7 @@
   {
     "id": "systeme-de-gestion-electronique-de-documents-2024",
     "title": "Systeme de Gestion Electronique de Documents (GED)",
+    "imageUrl": "https://images.unsplash.com/photo-1568667256549-094345857637?w=400&h=225&fit=crop",
     "description": "A web application for document management featuring hierarchical folder structures, file upload/download, role and folder-based access control, search functionality, and an explorer-style interface.",
     "technologies": [
       {
