@@ -3,22 +3,22 @@
     "id": "technicien-specialise-developpement-digital-web-full-stack",
     "startYear": 2024,
     "endYear": null,
-    "heading": "Technicien Spécialisé",
-    "title": "Développement Digital option Web Full Stack",
+    "heading": "Specialized Technician",
+    "title": "Digital Development (Web Full Stack option)",
     "institution": "CMC l'Oriental",
     "location": "Nador",
     "descriptionBlocks": [
       {
         "type": "list",
         "items": [
-          "Conception et développement d'applications web responsives en utilisant HTML5, CSS3, JavaScript (ES6+)",
-          "Implémentation d'APIs RESTful avec Node.js et Express.js, intégration de bases de données MongoDB et PostgreSQL",
-          "Développement d'interfaces utilisateur dynamiques avec React.js (hooks, context API, Redux Toolkit)",
-          "Mise en œuvre de stratégies d'authentification et d'autorisation (JWT, OAuth 2.0)",
-          "Utilisation de Git pour le contrôle de version et collaboration via GitFlow",
-          "Déploiement d'applications sur des plateformes cloud (AWS, Heroku) avec Docker containerisation",
-          "Optimisation des performances front-end (lazy loading, code splitting, caching strategies)",
-          "Tests unitaires et d'intégration avec Jest, React Testing Library et Supertest"
+          "Design and development of responsive web applications using HTML5, CSS3, JavaScript (ES6+)",
+          "Implementation of RESTful APIs with Node.js and Express.js, integration of MongoDB and PostgreSQL databases",
+          "Development of dynamic user interfaces with React.js (hooks, context API, Redux Toolkit)",
+          "Implementation of authentication and authorization strategies (JWT, OAuth 2.0)",
+          "Use of Git for version control and collaboration via GitFlow",
+          "Deployment of applications on cloud platforms (AWS, Heroku) with Docker containerization",
+          "Front-end performance optimization (lazy loading, code splitting, caching strategies)",
+          "Unit and integration testing with Jest, React Testing Library, and Supertest"
         ]
       }
     ]
@@ -35,10 +35,10 @@
       {
         "type": "list",
         "items": [
-          "Analyse syntaxique et morphologique de corpus linguistiques anglais contemporains",
-          "Étude comparative des théories phonologiques génératives et optimality theory",
-          "Recherche sociolinguistique sur les variations dialectales dans les médias numériques",
-          "Méthodologie de recherche qualitative : entretiens semi-structurés et analyse de discours"
+          "Syntactic and morphological analysis of contemporary English linguistic corpora",
+          "Comparative study of generative phonological theories and optimality theory",
+          "Sociolinguistic research on dialectal variation in digital media",
+          "Qualitative research methodology: semi-structured interviews and discourse analysis"
         ]
       }
     ]
