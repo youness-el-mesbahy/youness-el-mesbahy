@@ -55,6 +55,12 @@
     --color-primary-dark: var(--color-oregon-blue-1300);
 
     --color-milk: #F4F4F4;
+
+}
+
+:root {
+    --bg-milk: #F4F4F4;
+
 }
 
 html {
@@ -74,4 +80,52 @@ button {
     cursor: pointer;
 }
 
+.timeline_circle {
+    background-color: #fff;
+    border-radius: 100%;
+    width: 15px;
+    min-width: 15px;
+    max-width: 15px;
+    height: 15px;
+    min-height: 15px;
+    max-height: 15px;
+    position: sticky;
+    top: 50vh;
+    box-shadow: 0 0 0 8px #0a0a0a;
+}
 
+
+.bg-gradient {
+    background: linear-gradient(to bottom, #60a5fa, #4a90e2, #3b82f6);
+    transition: height 0.1s linear;
+}
+
+
+.overlay-fade-top {
+    position: absolute;
+    inset: 0% 0% auto;
+    height: 80px;
+    background-image: linear-gradient(#f4f4f4, #f4f4f400);
+    transform: translateY(-100%);
+    z-index: 99999;
+}
+
+.overlay-fade-bottom {
+    position: absolute;
+    inset: auto 0% 0%;
+    height: 80px;
+    background-image: linear-gradient(to top, #f4f4f4, #f4f4f400);
+    transform: translateY(100%);
+    z-index: 99999;
+}
+
+.timeline_component {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position: relative;
+}

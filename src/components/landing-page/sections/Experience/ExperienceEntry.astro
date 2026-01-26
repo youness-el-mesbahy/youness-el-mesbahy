@@ -10,10 +10,13 @@ const {
 } = Astro.props;
 ---
 
-<div class="flex gap-16">
-    <div>
+<div class="flex">
+    <div class="flex items-center h-fit justify-between sticky top-[40vh]">
+
+    <div class="bg-carbon-200 rounded-full w-[15px] h-[15px]   shadow-[0_0_0_8px_#f4f4f4]  mr-16"></div>
+    <div class="text-nowrap mr-20">
         <p class="font-light">{dateRange}</p>
-        <h3 class="text-xl my-[10px] font-semibold">{title}</h3>
+        <h3 class="text-xl my-[10px] font-semibold text-primary">{title}</h3>
         <p class="flex items-center gap-2 mb-2">
             <Building size="18px"/>
             <span class="">{company}</span>
@@ -23,10 +26,11 @@ const {
             <span class="">{location}</span>
         </p>
     </div>
+    </div>
     <div class="">
         <h4 class="text-lg font-semibold mb-4 mt-6">{heading}</h4>
         <div class="w-[540px]">
-        <slot/>
+            <slot/>
         </div>
     </div>
 </div>

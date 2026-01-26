@@ -10,27 +10,36 @@ const education = await getCollection("education");
         title="2.&nbsp;Education"
         subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
 >
-    <div class="flex gap-12 items-start mt-20 justify-center">
+    <div class="flex mt-20 justify-center timeline_component ">
 
-        <div class="w-8 h-64 bg-carbon-1400 mr-12 "></div>
+            <div class="overlay-fade-top"></div>
+            <div class="overlay-fade-bottom"></div>
 
-        <div class="space-y-14">
+
+
+        <div class=" relative space-y-24" id="timeline-container">
+            <div class="absolute top-[-80px] left-[6px] w-[3px] h-[calc(100%+160px)] bg-gray-500 overflow-hidden" id="timeline-bg">
+                <div class="bg-gradient w-[3px] h-0" id="gradient-line"></div>
+            </div>
+
             {education.map((entry) => (
-                    <ExperienceEntry
-                            dateRange={`${entry.data.startYear} - ${entry.data.endYear ?? "Present"}`}
-                            title={entry.data.heading}
-                            company={entry.data.institution}
-                            location={entry.data.location}
-                            heading={entry.data.title}
-                    >
-                        {entry.data.descriptionBlocks.map((block) => (
-                                <ul class="list-disc pl-5 space-y-1">
-                                    {block.items.map((item) => (
-                                            <li>{item}</li>
-                                    ))}
-                                </ul>
-                        ))}
-                    </ExperienceEntry>
+                    <div>
+                        <ExperienceEntry
+                                dateRange={`${entry.data.startYear} - ${entry.data.endYear ?? "Present"}`}
+                                title={entry.data.heading}
+                                company={entry.data.institution}
+                                location={entry.data.location}
+                                heading={entry.data.title}
+                        >
+                            {entry.data.descriptionBlocks.map((block) => (
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        {block.items.map((item) => (
+                                                <li>{item}</li>
+                                        ))}
+                                    </ul>
+                            ))}
+                        </ExperienceEntry>
+                    </div>
             ))}
         </div>
     </div>
@@ -38,3 +47,36 @@ const education = await getCollection("education");
 
 
 
+<script>
+    function updateGradientLine() {
+        const timelineBg = document.getElementById('timeline-bg');
+        const gradientLine = document.getElementById('gradient-line');
+
+        if (!timelineBg || !gradientLine) return;
+
+        const rect = timelineBg.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const intersectionY = viewportHeight * 0.4;
+
+        let revealAmount = intersectionY - rect.top;
+        revealAmount = Math.max(0, Math.min(revealAmount, rect.height));
+
+        gradientLine.style.height = revealAmount + 'px';
+    }
+
+    // Use requestAnimationFrame for smooth updates
+    let ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateGradientLine();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateGradientLine, { passive: true });
+    document.addEventListener('DOMContentLoaded', updateGradientLine);
+</script>
