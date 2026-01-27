@@ -2,7 +2,8 @@
 import {Image} from "astro:assets"
 import myImage from "../../../assets/younesselmesbahy.jpg"
 
-import {Moon} from "@lucide/astro"
+import {Moon,Sun} from "@lucide/astro"
+import Button from "../../ui/Button.astro";
 ---
 
 <header id="home" class="flex items-center justify-between mx-16 my-8">
@@ -34,9 +35,35 @@ import {Moon} from "@lucide/astro"
     <div class="inline-block">
         <div class="flex items-center gap-5">
             <!--<p>EN</p>-->
-            <p>
-                <Moon size="20"/>
-            </p>
+            <button id="toggle-theme">
+                <Moon size="20" class="dark:hidden"/>
+                <Sun size="20" class="hidden dark:block"/>
+            </button>
         </div>
     </div>
 </header>
+
+<script>
+
+
+    if (!localStorage.getItem('theme'))
+        localStorage.setItem('theme', 'light')
+
+
+    const html = document.documentElement;
+
+    function toggleTheme() {
+        const currentTheme = localStorage.getItem('theme')
+
+        if (currentTheme === 'light') {
+            localStorage.setItem("theme", "dark");
+            html.dataset.theme = "dark";
+        } else {
+            localStorage.setItem("theme", "light");
+            html.dataset.theme = "light";
+        }
+    }
+
+    document.getElementById("toggle-theme")?.addEventListener("click", toggleTheme)
+
+</script>

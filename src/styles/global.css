@@ -1,74 +1,189 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* CSS Variables */
+:root {
+    /* Carbon Fiber Palette */
+    --carbon: oklch(25% 0.01 260);
+    --carbon-50: #fafafa;
+    --carbon-100: #eaeaea;
+    --carbon-200: #d5d5d5;
+    --carbon-300: #c0c0c0;
+    --carbon-400: #ababab;
+    --carbon-500: #979797;
+    --carbon-600: #828282;
+    --carbon-700: #6d6d6d;
+    --carbon-800: #585858;
+    --carbon-900: #434343;
+    --carbon-950: #2e2e2e;
+    --carbon-1000: #292929;
+    --carbon-1100: #252525;
+    --carbon-1200: #202020;
+    --carbon-1300: #1c1c1c;
+    --carbon-1400: #171717;
+    --carbon-1500: #121212;
+    --carbon-1600: #0e0e0e;
+    --carbon-1700: #090909;
+    --carbon-1800: #050505;
+
+    /* Oregon Blue Palette */
+    --oregon-blue: #4a90e2;
+    --oregon-blue-50: #edf4fc;
+    --oregon-blue-100: #dbe9f9;
+    --oregon-blue-200: #c9def6;
+    --oregon-blue-300: #b7d3f3;
+    --oregon-blue-400: #a5c8f1;
+    --oregon-blue-500: #92bcee;
+    --oregon-blue-600: #80b1eb;
+    --oregon-blue-700: #6ea6e8;
+    --oregon-blue-800: #5c9be5;
+    --oregon-blue-900: #4a90e2;
+    --oregon-blue-950: #4382cb;
+    --oregon-blue-1000: #3b73b5;
+    --oregon-blue-1100: #34659e;
+    --oregon-blue-1200: #2c5688;
+    --oregon-blue-1300: #254871;
+    --oregon-blue-1400: #1e3a5a;
+    --oregon-blue-1500: #162b44;
+    --oregon-blue-1600: #0f1d2d;
+    --oregon-blue-1700: #070e17;
+
+    /* Primary Colors */
+    --primary: var(--oregon-blue-900);
+    --primary-light: var(--oregon-blue-300);
+    --primary-dark: var(--oregon-blue-1300);
+
+    /* Additional Colors */
+    --milk: #F4F4F4;
+    --bg-milk: #F4F4F4;
+    --bg-milk-rgb: 244 244 244;
+    --bg-milk-transparent: rgba(244, 244, 244, 0);
+}
+
+
+/* CSS Variables - Dark Mode */
+:root.dark,
+[data-theme="dark"] {
+    /* Carbon Fiber Palette - Inverted for dark mode */
+    --carbon: oklch(75% 0.01 260);
+    --carbon-50: #050505;
+    --carbon-100: #090909;
+    --carbon-200: #0e0e0e;
+    --carbon-300: #121212;
+    --carbon-400: #171717;
+    --carbon-500: #1c1c1c;
+    --carbon-600: #202020;
+    --carbon-700: #252525;
+    --carbon-800: #292929;
+    --carbon-900: #2e2e2e;
+    --carbon-950: #434343;
+    --carbon-1000: #585858;
+    --carbon-1100: #6d6d6d;
+    --carbon-1200: #828282;
+    --carbon-1300: #979797;
+    --carbon-1400: #ababab;
+    --carbon-1500: #c0c0c0;
+    --carbon-1600: #d5d5d5;
+    --carbon-1700: #eaeaea;
+    --carbon-1800: #fafafa;
+
+    /* Oregon Blue Palette - Adjusted for dark mode */
+    --oregon-blue: #5c9be5;
+    --oregon-blue-50: #070e17;
+    --oregon-blue-100: #0f1d2d;
+    --oregon-blue-200: #162b44;
+    --oregon-blue-300: #1e3a5a;
+    --oregon-blue-400: #254871;
+    --oregon-blue-500: #2c5688;
+    --oregon-blue-600: #34659e;
+    --oregon-blue-700: #3b73b5;
+    --oregon-blue-800: #4382cb;
+    --oregon-blue-900: #4a90e2;
+    --oregon-blue-950: #5c9be5;
+    --oregon-blue-1000: #6ea6e8;
+    --oregon-blue-1100: #80b1eb;
+    --oregon-blue-1200: #92bcee;
+    --oregon-blue-1300: #a5c8f1;
+    --oregon-blue-1400: #b7d3f3;
+    --oregon-blue-1500: #c9def6;
+    --oregon-blue-1600: #dbe9f9;
+    --oregon-blue-1700: #edf4fc;
+
+    /* Primary Colors - Brighter for dark mode */
+    --primary: var(--oregon-blue-950);
+    --primary-light: var(--oregon-blue-1300);
+    --primary-dark: var(--oregon-blue-700);
+
+    /* Additional Colors - Adjusted for dark mode */
+    --milk: #1c1c1c;
+    --bg-milk: #1c1c1c;
+    --bg-milk-rgb: 28 28 28;
+    --bg-milk-transparent: rgba(28, 28, 28, 0);
+}
+
 @theme {
     /* Carbon Fiber Palette */
-    --color-carbon: oklch(25% 0.01 260);
-    --color-carbon-50: #fafafa;
-    --color-carbon-100: #eaeaea;
-    --color-carbon-200: #d5d5d5;
-    --color-carbon-300: #c0c0c0;
-    --color-carbon-400: #ababab;
-    --color-carbon-500: #979797;
-    --color-carbon-600: #828282;
-    --color-carbon-700: #6d6d6d;
-    --color-carbon-800: #585858;
-    --color-carbon-900: #434343;
-    --color-carbon-950: #2e2e2e;
-    --color-carbon-1000: #292929;
-    --color-carbon-1100: #252525;
-    --color-carbon-1200: #202020;
-    --color-carbon-1300: #1c1c1c;
-    --color-carbon-1400: #171717;
-    --color-carbon-1500: #121212;
-    --color-carbon-1600: #0e0e0e;
-    --color-carbon-1700: #090909;
-    --color-carbon-1800: #050505;
-}
+    --color-carbon: var(--carbon);
+    --color-carbon-50: var(--carbon-50);
+    --color-carbon-100: var(--carbon-100);
+    --color-carbon-200: var(--carbon-200);
+    --color-carbon-300: var(--carbon-300);
+    --color-carbon-400: var(--carbon-400);
+    --color-carbon-500: var(--carbon-500);
+    --color-carbon-600: var(--carbon-600);
+    --color-carbon-700: var(--carbon-700);
+    --color-carbon-800: var(--carbon-800);
+    --color-carbon-900: var(--carbon-900);
+    --color-carbon-950: var(--carbon-950);
+    --color-carbon-1000: var(--carbon-1000);
+    --color-carbon-1100: var(--carbon-1100);
+    --color-carbon-1200: var(--carbon-1200);
+    --color-carbon-1300: var(--carbon-1300);
+    --color-carbon-1400: var(--carbon-1400);
+    --color-carbon-1500: var(--carbon-1500);
+    --color-carbon-1600: var(--carbon-1600);
+    --color-carbon-1700: var(--carbon-1700);
+    --color-carbon-1800: var(--carbon-1800);
 
-@theme {
     /* Oregon Blue Palette */
-    --color-oregon-blue: #4a90e2;
-    --color-oregon-blue-50: #edf4fc;
-    --color-oregon-blue-100: #dbe9f9;
-    --color-oregon-blue-200: #c9def6;
-    --color-oregon-blue-300: #b7d3f3;
-    --color-oregon-blue-400: #a5c8f1;
-    --color-oregon-blue-500: #92bcee;
-    --color-oregon-blue-600: #80b1eb;
-    --color-oregon-blue-700: #6ea6e8;
-    --color-oregon-blue-800: #5c9be5;
-    --color-oregon-blue-900: #4a90e2;
-    --color-oregon-blue-950: #4382cb;
-    --color-oregon-blue-1000: #3b73b5;
-    --color-oregon-blue-1100: #34659e;
-    --color-oregon-blue-1200: #2c5688;
-    --color-oregon-blue-1300: #254871;
-    --color-oregon-blue-1400: #1e3a5a;
-    --color-oregon-blue-1500: #162b44;
-    --color-oregon-blue-1600: #0f1d2d;
-    --color-oregon-blue-1700: #070e17;
-}
+    --color-oregon-blue: var(--oregon-blue);
+    --color-oregon-blue-50: var(--oregon-blue-50);
+    --color-oregon-blue-100: var(--oregon-blue-100);
+    --color-oregon-blue-200: var(--oregon-blue-200);
+    --color-oregon-blue-300: var(--oregon-blue-300);
+    --color-oregon-blue-400: var(--oregon-blue-400);
+    --color-oregon-blue-500: var(--oregon-blue-500);
+    --color-oregon-blue-600: var(--oregon-blue-600);
+    --color-oregon-blue-700: var(--oregon-blue-700);
+    --color-oregon-blue-800: var(--oregon-blue-800);
+    --color-oregon-blue-900: var(--oregon-blue-900);
+    --color-oregon-blue-950: var(--oregon-blue-950);
+    --color-oregon-blue-1000: var(--oregon-blue-1000);
+    --color-oregon-blue-1100: var(--oregon-blue-1100);
+    --color-oregon-blue-1200: var(--oregon-blue-1200);
+    --color-oregon-blue-1300: var(--oregon-blue-1300);
+    --color-oregon-blue-1400: var(--oregon-blue-1400);
+    --color-oregon-blue-1500: var(--oregon-blue-1500);
+    --color-oregon-blue-1600: var(--oregon-blue-1600);
+    --color-oregon-blue-1700: var(--oregon-blue-1700);
 
-@theme {
-    --color-primary: var(--color-oregon-blue-900);
-    --color-primary-light: var(--color-oregon-blue-300);
-    --color-primary-dark: var(--color-oregon-blue-1300);
+    /* Primary Colors */
+    --color-primary: var(--primary);
+    --color-primary-light: var(--primary-light);
+    --color-primary-dark: var(--primary-dark);
 
-    --color-milk: #F4F4F4;
-
-}
-
-:root {
-    --bg-milk: #F4F4F4;
-
+    /* Additional Colors */
+    --color-milk: var(--milk);
 }
 
 html {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-    color: var(--carbon-fiber-shade-500);
-    background: #F4F4F4;
+    color: var(--carbon-1800);
+    background: var(--bg-milk);
     scroll-behavior: smooth;
+    transition: .2s;
 }
 
 
@@ -81,7 +196,7 @@ button {
 }
 
 .timeline_circle {
-    background-color: #fff;
+    background-color: var(--bg-milk);
     border-radius: 100%;
     width: 15px;
     min-width: 15px;
@@ -91,7 +206,7 @@ button {
     max-height: 15px;
     position: sticky;
     top: 50vh;
-    box-shadow: 0 0 0 8px #0a0a0a;
+    box-shadow: 0 0 0 8px var(--bg-milk);
 }
 
 
@@ -105,7 +220,7 @@ button {
     position: absolute;
     inset: 0% 0% auto;
     height: 80px;
-    background-image: linear-gradient(#f4f4f4, #f4f4f400);
+    background-image: linear-gradient(var(--bg-milk), var(--bg-milk-transparent));
     transform: translateY(-100%);
     z-index: 99999;
 }
@@ -114,7 +229,7 @@ button {
     position: absolute;
     inset: auto 0% 0%;
     height: 80px;
-    background-image: linear-gradient(to top, #f4f4f4, #f4f4f400);
+    background-image: linear-gradient(to top, var(--bg-milk), var(--bg-milk-transparent));
     transform: translateY(100%);
     z-index: 99999;
 }
