@@ -6,13 +6,13 @@ const {project} = Astro.props
 const {title, imageUrl, description, technologies} = project.data;
 ---
 
-<div class="relative w-[20.5rem] py-4 px-5 rounded-lg border border-gray-200">
+<div class="relative max-w-[21.35vw] py-4 px-5 rounded-lg border border-gray-200">
     <img
             src={imageUrl}
             alt={title}
             width="288"
             height="162"
-            class="w-[18rem] h-[10.125rem] aspect-video rounded-lg object-cover bg-gray-100"
+            class="max-w-[18.75vw] max-h-[10.55vw] aspect-video rounded-lg object-cover bg-gray-100"
             loading="lazy"
     />
     <h3 class="text-lg mt-4">{title}</h3>

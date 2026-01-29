@@ -189,8 +189,8 @@ html {
 
 
 .container-xl {
-    width: 80rem;
-    /* 1280px */
+    max-width: 83.33vw;
+    /* 1280px on 1536px viewport (1080p @ 125%) */
 }
 
 button {
@@ -249,8 +249,8 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 70rem;
-    /* 1120px */
+    max-width: 72.92vw;
+    /* 1120px on 1536px viewport */
     margin-left: auto;
     margin-right: auto;
     display: flex;

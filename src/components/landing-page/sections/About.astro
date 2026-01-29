@@ -18,7 +18,7 @@ const aboutContent = about[0];
         />
 
         <div class="mt-20 flex justify-center items-start gap-32 ">
-            <div class="w-[31.25rem]">
+            <div class="max-w-[32.55vw]">
                 <div class="space-y-3">
                     {aboutContent && aboutContent.data.summary.map((paragraph) => (
                             <p>{paragraph}</p>
@@ -32,11 +32,11 @@ const aboutContent = about[0];
                 </a>
             </div>
             <div class="relative">
-                <div class="h-[20rem] w-[20rem] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">
+                <div class="max-h-[20.83vw] max-w-[20.83vw] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">
                     <Image src={HeroImage} alt="HeroImage"/>
                 </div>
                 <div
-                        class="h-[20rem] w-[20rem] absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"
+                        class="max-h-[20.83vw] max-w-[20.83vw] absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"
                 >
                 </div>
 
