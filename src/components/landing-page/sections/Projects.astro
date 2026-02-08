@@ -12,9 +12,9 @@ const projects = await getCollection("projects");
         title="2.&nbsp;Projects"
         subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
 >
-    <div class="my-16 flex justify-center  items-stretch gap-12">
+    <div class="my-16  grid grid-cols-3 gap-10 px-10 max-[1116px]:grid-cols-2  items-stretch ">
         {projects.map((project) => (
-                <Card project={project}/>
+                <Card project={project} />
         ))}
     </div>
     <!--<p class="flex items-center justify-center -mt-4">All Projects &nbsp;-->

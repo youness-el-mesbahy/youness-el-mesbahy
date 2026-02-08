@@ -14,13 +14,13 @@ const skills = await getCollection('skills')
         title="4.&nbsp;Skills"
         subtitle="Lorem Ipsu is simply dummy text of the printing and typesetting"
 >
-    <div class="my-16 grid grid-cols-2 gap-y-[3.5rem] px-32">
+    <div class="my-16 grid grid-cols-2 gap-y-[3.5rem] px-32 max-[1116px]:px-18">
         {
-            skills.map((skill, index) => (
+            skills.map((skill) => (
                     <>
                         <h3 class="text-xl font-semibold">{skill.data.category}</h3>
                         <div class="flex flex-wrap gap-4">
-                            {skill.data.items.map((item, index) => (
+                            {skill.data.items.map((item) => (
                                     <Badge>
                                         <img src={item.icon} width="18" height="18"/>
                                         <span>{item.name}</span>
