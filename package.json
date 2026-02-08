@@ -10,11 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
     "@lucide/astro": "^0.563.0",
     "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
     "astro": "^5.16.15",
     "clsx": "^2.1.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
