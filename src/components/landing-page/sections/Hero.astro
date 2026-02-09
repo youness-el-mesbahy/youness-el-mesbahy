@@ -3,6 +3,8 @@ import {Copy, Send, MoveRight} from '@lucide/astro';
 import Button from '../../ui/Button.astro';
 import {Image} from "astro:assets"
 import HeroImage from "../../../assets/my-img.jpeg"
+import ContactF from '../../ui/ContactF.astro'
+import Modal from "../../ui/Modal"
 ---
 
 <section>
@@ -22,7 +24,7 @@ import HeroImage from "../../../assets/my-img.jpeg"
             <!--</div>-->
             <div>
                 <div class="flex items-center justify-between max-[1116px]:flex-col max-[1116px]:items-start max-[1116px]:gap-6   ">
-                    <h2 class="text-8xl font-semibold text-nowrap max-[1116px]:text-6xl">Full-stack <span class="hidden  max-[1116px]:inline-block">Developer</span> </h2>
+                    <h2 class="text-8xl font-semibold text-nowrap max-[952px]:text-wrap max-[1116px]:text-6xl">Full-stack <span class="hidden  max-[1116px]:inline-block">Developer</span> </h2>
                     <div class="grid grid-cols-[2fr_auto]  max-[1116px]:grid-cols-1  max-[1116px]:gap-4 justify-between  justify-items-center max-[1116px]:justify-items-start w-80  max-[1116px]:w-full">
                         <p class=" font-semibold font-base grow">
                             2+ years of experience building modern React applications with strong backend foundations.
@@ -40,7 +42,7 @@ import HeroImage from "../../../assets/my-img.jpeg"
                 <div class="flex items-end justify-between gap-16 mt-12 max-[1116px]:mt-6">
 
                     <div class="flex gap-4 mb-3">
-                        <Button id="btn-contact-me">
+                        <Button id="btn-contact-me" >
                             <Send size="1.25rem"/>
                             &nbsp;Contact Me
                         </Button>

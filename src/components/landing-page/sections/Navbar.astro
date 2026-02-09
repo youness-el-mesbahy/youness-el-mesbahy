@@ -2,7 +2,7 @@
 import {Image} from "astro:assets"
 import myImage from "../../../assets/younesselmesbahy.jpg"
 
-import {Moon,Sun} from "@lucide/astro"
+import {Moon,Sun,Menu} from "@lucide/astro"
 import Button from "../../ui/Button.astro";
 ---
 
@@ -13,7 +13,7 @@ import Button from "../../ui/Button.astro";
         </div>
         <p>Youness El Mesbahy</p>
     </div>
-    <nav class="inline-block">
+    <nav class="inline-block max-[952px]:hidden">
         <ul class="space-x-10">
             <li class="inline-block"><a href="#home"><span
                     class="text-oregon-blue-1200 inline-block">1.&nbsp;</span><span
@@ -32,15 +32,21 @@ import Button from "../../ui/Button.astro";
                     class="hover:text-oregon-blue-1200 hover: duration-300">Contact</span></a></li>
         </ul>
     </nav>
-    <div class="inline-block">
-        <div class="flex items-center gap-5">
+    <div class="inline-block ">
+        <div class="flex items-center gap-5 max-[952px]:hidde">
             <!--<p>EN</p>-->
             <button id="toggle-theme">
                 <Moon size="1.25rem" class="dark:hidden"/>
                 <Sun size="1.25rem" class="hidden dark:block"/>
             </button>
         </div>
+        <!--<div>-->
+        <!--    <button class="p-2 text-carbon-1400 hover:bg-carbon-100 dark:hover:bg-carbon-800 duration-300 rounded-sm">-->
+        <!--        <Menu size="1.25rem"/>-->
+        <!--    </button>-->
+        <!--</div>-->
     </div>
+
 </header>
 
 <script>
