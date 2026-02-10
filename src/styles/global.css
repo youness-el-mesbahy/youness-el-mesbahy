@@ -256,3 +256,16 @@ button {
     display: flex;
     position: relative;
 }
+
+
+@media screen and (width<=408px) {
+    html{
+        font-size: 90%;
+    }
+}
+
+@media screen and (width<=341px) {
+    html{
+        font-size: 80%;
+    }
+}

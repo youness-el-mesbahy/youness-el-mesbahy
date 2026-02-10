@@ -5,7 +5,7 @@ import SectionHeader from "../ui/SectionHeader.astro";
 
 const {id, className = "", title, subtitle} = Astro.props;
 
-const sectionClasses = clsx("py-24", className);
+const sectionClasses = clsx("py-24 max-[485px]:py-20", className);
 ---
 
 <section id={id} class={sectionClasses}>

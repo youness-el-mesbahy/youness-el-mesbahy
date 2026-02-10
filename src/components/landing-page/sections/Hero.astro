@@ -11,7 +11,7 @@ import Modal from "../../ui/Modal"
 
 <section>
     <div
-            class="container-xl mx-auto flex items-center justify-center gap-32 mt-40 max-[1116px]:mt-36"
+            class="container-xl mx-auto flex items-center justify-center gap-32 mt-40 max-[1116px]:mt-36 max-[696px]:mt-32"
     >
         <div>
             <!--<div>-->
@@ -41,24 +41,30 @@ import Modal from "../../ui/Modal"
                         </div>
                     </div>
                 </div>
-                <div class="flex items-end justify-between gap-16 mt-12 max-[1116px]:mt-6">
+                <div class="flex items-end justify-between gap-16 max-[514px]:gap-0 mt-12 max-[1116px]:mt-6">
 
-                    <div class="flex items-center justify-center gap-6">
-                      <div class="flex items-center gap-4 mb-3 max-[627px]:mb-0">
+                    <div class="flex items-center justify-center gap-6 grow  max-[514px]:flex-col max-[514px]:">
+                      <div class="flex items-center gap-4 max-[330px]:w-full mb-3 max-[627px]:mb-0 max-[330px]:flex-col max-[330px]:justify-center ">
 
-                        <Button id="btn-contact-me" >
+                        <Button id="btn-contact-me" className="max-[330px]:w-full"  >
                             <Send size="1.25rem"/>
                             &nbsp;Contact Me
                         </Button>
-                        <Button id="copy-email-hero" variant="secondary" aria-label="Copy email">
+                        <Button id="copy-email-hero" variant="secondary" aria-label="Copy email" className="max-[330px]:w-full" >
                             <Copy size="1.25rem"/>
                             &nbsp;Copy Email
                         </Button>
                       </div>
                       <div class=" hidden max-[627px]:flex  gap-4 items-center">
-                        <Github size="20"/>
-                        <Linkedin size="20"/>
-                        <Instagram size="20"/>
+                        <a href="https://github.com/youness-el-mesbahy" target="_blank" rel="noreferrer">
+                          <Github size="20"/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/youness-el-mesbahy-7327992b8" target="_blank" rel="noreferrer">
+                          <Linkedin size="20"/>
+                        </a>
+                        <a href="https://www.instagram.com/youness.el.mesbahy/" target="_blank" rel="noreferrer">
+                          <Instagram size="20"/>
+                        </a>
                       </div>
                     </div>
                     <h2 class="text-8xl font-semibold text-nowrap  max-[1116px]:hidden">Developer</h2>
