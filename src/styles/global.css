@@ -116,10 +116,11 @@
     --primary-dark: var(--oregon-blue-700);
 
     /* Additional Colors - Adjusted for dark mode */
-    --milk: #1c1c1c;
-    --bg-milk: #1c1c1c;
-    --bg-milk-rgb: 28 28 28;
-    --bg-milk-transparent: rgba(28, 28, 28, 0);
+    --milk: #0e0e0e;
+    --bg-milk: #0e0e0e;
+    --bg-milk-rgb: 14 14 14;
+    --bg-milk-transparent: rgba(14, 14, 14, 0);
+
 }
 
 @theme {
