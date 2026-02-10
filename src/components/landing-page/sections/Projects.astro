@@ -12,7 +12,7 @@ const projects = await getCollection("projects");
         title="2.&nbsp;Projects"
         subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting"
 >
-    <div class="my-16  grid grid-cols-3 gap-10 px-10 max-[1116px]:grid-cols-2  items-stretch ">
+    <div class="my-16  grid grid-cols-3 gap-10 px-10 max-[1116px]:grid-cols-2 max-[810px]:grid-cols-1  items-stretch ">
         {projects.map((project) => (
                 <Card project={project} />
         ))}

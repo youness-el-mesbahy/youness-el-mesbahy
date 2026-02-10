@@ -1,6 +1,8 @@
 ---
 import {Copy, Send, MoveRight} from '@lucide/astro';
 import Button from '../../ui/Button.astro';
+import {Github, Instagram, Linkedin} from "@lucide/astro";
+
 import {Image} from "astro:assets"
 import HeroImage from "../../../assets/my-img.jpeg"
 import ContactF from '../../ui/ContactF.astro'
@@ -41,7 +43,9 @@ import Modal from "../../ui/Modal"
                 </div>
                 <div class="flex items-end justify-between gap-16 mt-12 max-[1116px]:mt-6">
 
-                    <div class="flex gap-4 mb-3">
+                    <div class="flex items-center justify-center gap-6">
+                      <div class="flex items-center gap-4 mb-3 max-[627px]:mb-0">
+
                         <Button id="btn-contact-me" >
                             <Send size="1.25rem"/>
                             &nbsp;Contact Me
@@ -50,6 +54,12 @@ import Modal from "../../ui/Modal"
                             <Copy size="1.25rem"/>
                             &nbsp;Copy Email
                         </Button>
+                      </div>
+                      <div class=" hidden max-[627px]:flex  gap-4 items-center">
+                        <Github size="20"/>
+                        <Linkedin size="20"/>
+                        <Instagram size="20"/>
+                      </div>
                     </div>
                     <h2 class="text-8xl font-semibold text-nowrap  max-[1116px]:hidden">Developer</h2>
                 </div>
