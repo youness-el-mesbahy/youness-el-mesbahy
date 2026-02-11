@@ -190,7 +190,7 @@ html {
 
 
 .container-xl {
-    max-width: 83.33vw;
+    max-width: 1140px;
     /* 1280px on 1536px viewport (1080p @ 125%) */
 }
 
