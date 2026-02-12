@@ -191,6 +191,7 @@ html {
 
 .container-xl {
     max-width: 1140px;
+    padding: 0 8.5%;
     /* 1280px on 1536px viewport (1080p @ 125%) */
 }
 
