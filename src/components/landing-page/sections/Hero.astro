@@ -1,101 +1,119 @@
 ---
-import {Copy, Send, MoveRight} from '@lucide/astro';
-import Button from '../../ui/Button.astro';
-import {Github, Instagram, Linkedin} from "@lucide/astro";
+import { Copy, Send, MoveRight } from '@lucide/astro'
+import Button from '../../ui/Button.astro'
+import { Github, Instagram, Linkedin } from '@lucide/astro'
 
-import {Image} from "astro:assets"
-import HeroImage from "../../../assets/my-img.jpeg"
+import { Image } from 'astro:assets'
+import HeroImage from '../../../assets/my-img.jpeg'
 import ContactF from '../../ui/ContactF.astro'
-import Modal from "../../ui/Modal"
+import Modal from '../../ui/Modal'
+import ContactModal from '../../ContactModal'
 ---
 
 <section>
-    <div
-            class="container-xl mx-auto flex items-center justify-center gap-32 mt-40 max-[1116px]:mt-36 max-[696px]:mt-32"
-    >
-        <div>
-            <!--<div>-->
+  <div
+    class="container-xl mx-auto mt-40 flex items-center justify-center gap-32 max-[1116px]:mt-36 max-[696px]:mt-32"
+  >
+    <div>
+      <!--<div>-->
 
-            <!--    <h1 class="text-4xl mb-3 font-semibold">-->
-            <!--        Building Scalable, Performant Full-Stack Applications-->
-            <!--    </h1>-->
-            <!--    <p class="text-base">-->
-            <!--        I architect and deliver clean, maintainable code for-->
-            <!--        fast-growing businesses.-->
-            <!--    </p>-->
-            <!--</div>-->
-            <div>
-                <div class="flex items-center justify-between max-[1116px]:flex-col max-[1116px]:items-start max-[1116px]:gap-6   ">
-                    <h2 class="text-8xl font-semibold text-nowrap max-[952px]:text-wrap max-[1116px]:text-6xl">Full-stack <span class="hidden  max-[1116px]:inline-block">Developer</span> </h2>
-                    <div class="grid grid-cols-[2fr_auto]  max-[1116px]:grid-cols-1  max-[1116px]:gap-4 justify-between  justify-items-center max-[1116px]:justify-items-start w-80  max-[1116px]:w-full">
-                        <p class=" font-semibold font-base grow">
-                            2+ years of experience building modern React applications with strong backend foundations.
-                        </p>
-                        <div class="rotate-90   max-[1116px]:rotate-0  max-[1116px]:row-start-1">
-                            <a href="#projects">
-                                <Button className="bg-carbon-1200 tracking-wide dark:bg-carbon-1800  dark:text-carbon-400  rounded-full">
-                                    Projects &nbsp;
-                                    <MoveRight size="1.25rem"/>
-                                </Button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-end justify-between gap-16 max-[514px]:gap-0 mt-12 max-[1116px]:mt-6">
-
-                    <div class="flex items-center justify-center gap-6 grow  max-[514px]:flex-col max-[514px]:">
-                      <div class="flex items-center gap-4 max-[330px]:w-full mb-3 max-[627px]:mb-0 max-[330px]:flex-col max-[330px]:justify-center ">
-
-                        <Button id="btn-contact-me" className="max-[330px]:w-full"  >
-                            <Send size="1.25rem"/>
-                            &nbsp;Contact Me
-                        </Button>
-                        <Button id="copy-email-hero" variant="secondary" aria-label="Copy email" className="max-[330px]:w-full" >
-                            <Copy size="1.25rem"/>
-                            &nbsp;Copy Email
-                        </Button>
-                      </div>
-                      <div class=" hidden max-[627px]:flex  gap-4 items-center">
-                        <a href="https://github.com/youness-el-mesbahy" target="_blank" rel="noreferrer">
-                          <Github size="20" class="hover:text-primary duration-300"/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/youness-el-mesbahy-7327992b8" target="_blank" rel="noreferrer">
-                          <Linkedin size="20" class="hover:text-primary duration-300"/>
-                        </a>
-                        <a href="https://www.instagram.com/youness.el.mesbahy/" target="_blank" rel="noreferrer">
-                          <Instagram size="20" class="hover:text-primary duration-300"/>
-                        </a>
-                      </div>
-                    </div>
-                    <h2 class="text-8xl font-semibold text-nowrap  max-[1116px]:hidden">Developer</h2>
-                </div>
+      <!--    <h1 class="text-4xl mb-3 font-semibold">-->
+      <!--        Building Scalable, Performant Full-Stack Applications-->
+      <!--    </h1>-->
+      <!--    <p class="text-base">-->
+      <!--        I architect and deliver clean, maintainable code for-->
+      <!--        fast-growing businesses.-->
+      <!--    </p>-->
+      <!--</div>-->
+      <div>
+        <div
+          class="flex items-center justify-between max-[1116px]:flex-col max-[1116px]:items-start max-[1116px]:gap-6"
+        >
+          <h2
+            class="text-8xl font-semibold text-nowrap max-[1116px]:text-6xl max-[952px]:text-wrap"
+          >
+            Full-stack <span class="hidden max-[1116px]:inline-block">Developer</span>
+          </h2>
+          <div
+            class="grid w-80 grid-cols-[2fr_auto] justify-between justify-items-center max-[1116px]:w-full max-[1116px]:grid-cols-1 max-[1116px]:justify-items-start max-[1116px]:gap-4"
+          >
+            <p class="font-base grow font-semibold">
+              2+ years of experience building modern React applications with strong backend
+              foundations.
+            </p>
+            <div class="rotate-90 max-[1116px]:row-start-1 max-[1116px]:rotate-0">
+              <a href="#projects">
+                <Button
+                  className="bg-carbon-1200 dark:bg-carbon-1800 dark:text-carbon-400 rounded-full tracking-wide"
+                >
+                  Projects &nbsp;
+                  <MoveRight size="1.25rem" />
+                </Button>
+              </a>
             </div>
+          </div>
         </div>
-        <!--<div class="relative">-->
-        <!--    <div class="h-[22.5rem] w-[22.5rem] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">-->
-        <!--        <Image src={HeroImage}  alt="HeroImage" />-->
-        <!--    </div>-->
-        <!--    <div-->
-        <!--        class="h-[22.5rem] w-[22.5rem] absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"-->
-        <!--    >-->
-        <!--    </div>-->
-        <!--</div>-->
+        <div
+          class="mt-12 flex items-end justify-between gap-16 max-[1116px]:mt-6 max-[514px]:gap-0"
+        >
+          <div
+            class="max-[514px]: flex grow items-center justify-center gap-6 max-[514px]:flex-col"
+          >
+            <div
+              class="mb-3 flex items-center gap-4 max-[627px]:mb-0 max-[330px]:w-full max-[330px]:flex-col max-[330px]:justify-center"
+            >
+              <ContactModal client:only="react" />
+              <Button
+                id="copy-email-hero"
+                variant="secondary"
+                aria-label="Copy email"
+                className="max-[330px]:w-full"
+              >
+                <Copy size="1.25rem" />
+                &nbsp;Copy Email
+              </Button>
+            </div>
+            <div class="hidden items-center gap-4 max-[627px]:flex">
+              <a href="https://github.com/youness-el-mesbahy" target="_blank" rel="noreferrer">
+                <Github size="20" class="hover:text-primary duration-300" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/youness-el-mesbahy-7327992b8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin size="20" class="hover:text-primary duration-300" />
+              </a>
+              <a
+                href="https://www.instagram.com/youness.el.mesbahy/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram size="20" class="hover:text-primary duration-300" />
+              </a>
+            </div>
+          </div>
+          <h2 class="text-8xl font-semibold text-nowrap max-[1116px]:hidden">Developer</h2>
+        </div>
+      </div>
     </div>
-
-
+    <!--<div class="relative">-->
+    <!--    <div class="h-[22.5rem] w-[22.5rem] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">-->
+    <!--        <Image src={HeroImage}  alt="HeroImage" />-->
+    <!--    </div>-->
+    <!--    <div-->
+    <!--        class="h-[22.5rem] w-[22.5rem] absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"-->
+    <!--    >-->
+    <!--    </div>-->
+    <!--</div>-->
+  </div>
 </section>
 
 <script>
-    const copyBtn = document.getElementById('copy-email-hero');
-    copyBtn?.addEventListener('click', async () => {
-        try {
-            await navigator.clipboard.writeText('younessmesbahy@gmail.com');
-        } catch (e) {
-        }
-    });
+  const copyBtn = document.getElementById('copy-email-hero')
+  copyBtn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('younessmesbahy@gmail.com')
+    } catch (e) {}
+  })
 </script>
-
-
-
-
-
