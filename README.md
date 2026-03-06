@@ -11,16 +11,13 @@
 
 <p>
   <a href="mailto:younessmesbahy@gmail.com">
-    <img src="https://img.shields.io/badge/Email-younessmesbahy@gmail.com-0EA5E9?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Email-younessmesbahy@gmail.com-0EA5E9?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://www.linkedin.com/in/youness-el-mesbahy-7327992b8">
-    <img src="https://img.shields.io/badge/LinkedIn-Youness%20El%20Mesbahy-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://github.com/youness-el-mesbahy">
-    <img src="https://img.shields.io/badge/GitHub-youness--el--mesbahy-181717?style=for-the-badge&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-Youness%20El%20Mesbahy-2563EB?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://www.instagram.com/youness.el.mesbahy/">
-    <img src="https://img.shields.io/badge/Instagram-@youness.el.mesbahy-DB2777?style=for-the-badge&logo=instagram&logoColor=white" />
+    <img src="https://img.shields.io/badge/Instagram-@youness.el.mesbahy-DB2777?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
 </p>
 
@@ -30,73 +27,45 @@
 
 <br/>
 
-# About Me
+<!-- ====== About ====== -->
+## About Me
 
-I build **scalable and reliable full-stack web applications** using modern technologies such as **Laravel, ReactJS, and MySQL**.
+> I build scalable, performant full-stack applications using **Laravel**, **ReactJS**, and **MySQL**.
+>
+> My focus is on creating valuable, real-world solutions, and I find deep satisfaction in guiding a project through its entire lifecycle—from the initial design concept to a polished, performant application.
+>
+> Currently expanding my expertise as a student in the **Web Full Stack program at CMC l'Oriental**, formalizing my practical skills with structured training in modern development.
+>
+> **Professional interests**: UX/UI design, cloud computing platforms, and cybersecurity principles.
 
-My focus is on developing **real-world solutions** that solve practical problems. I enjoy taking projects through the **entire lifecycle** — from analysis and design to development and deployment.
+<br/>
 
-Currently studying **Digital Development – Web Full Stack** at **Cité des Métiers et des Compétences l'Oriental (OFPPT)** to strengthen my engineering practices and deepen my technical expertise.
-
-**Professional Interests**
-
-- UX/UI Design  
-- Cloud Computing  
-- Cybersecurity Principles  
-- Backend Architecture  
-- API Design  
-
----
-
-# Tech Stack
+<!-- ====== Tech Stack ====== -->
+## Tech Stack
 
 <div align="center">
 
-## Frontend Development
-
+### Frontend
 <p>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-<img src="https://img.shields.io/badge/ReactJS-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"/>
-<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
-<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 </p>
 
----
-
-## Backend Development
-
+### Backend
 <p>
-<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
-<img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
-<img src="https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/ExpressJS-000000?style=for-the-badge&logo=express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
+  <img src="https://img.shields.io/badge/ExpressJS-000000?style=for-the-badge&logo=express&logoColor=white" />
 </p>
 
----
-
-## Databases
-
+### Database
 <p>
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-<img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-</p>
-
----
-
-## DevOps & Tools
-
-<p>
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
 </p>
 
 </div>
-
-<div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0ea5e9&height=120&section=footer&text=&fontSize=0" width="100%" />
-
-</div>
