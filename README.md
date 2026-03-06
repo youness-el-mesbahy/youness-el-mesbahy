@@ -46,7 +46,7 @@ Currently studying **Digital Development – Web Full Stack** at **Cité des Mé
 - Backend Architecture  
 - API Design  
 
----
+
 
 # Tech Stack
 
@@ -62,7 +62,7 @@ Currently studying **Digital Development – Web Full Stack** at **Cité des Mé
 <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
 </p>
 
----
+
 
 ## Backend Development
 
@@ -73,7 +73,7 @@ Currently studying **Digital Development – Web Full Stack** at **Cité des Mé
 <img src="https://img.shields.io/badge/ExpressJS-000000?style=for-the-badge&logo=express&logoColor=white"/>
 </p>
 
----
+
 
 ## Databases
 
@@ -83,7 +83,7 @@ Currently studying **Digital Development – Web Full Stack** at **Cité des Mé
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
 </p>
 
----
+
 
 ## DevOps & Tools
 
