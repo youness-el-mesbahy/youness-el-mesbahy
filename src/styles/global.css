@@ -185,11 +185,13 @@ html {
     background: var(--bg-milk);
     scroll-behavior: smooth;
     transition: .2s;
+    font-size: 105%;
 }
 
 
 
 .container-xl {
+    width: 100%;
     max-width: 1140px;
     padding: 0 8.5%;
     /* 1280px on 1536px viewport (1080p @ 125%) */
