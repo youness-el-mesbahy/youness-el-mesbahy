@@ -1,48 +1,48 @@
 ---
-import "../styles/global.css";
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/landing-page/sections/Navbar.astro";
-import Hero from "../components/landing-page/sections/Hero.astro";
-import {Github, Instagram, Linkedin} from "@lucide/astro";
-import Projects from "../components/landing-page/sections/Projects.astro";
-import Skills from "../components/landing-page/sections/Skills.astro";
-import Contact from "../components/landing-page/sections/Contact.astro";
-import About from "../components/landing-page/sections/About.astro";
-import Experience from "../components/landing-page/sections/Experience.astro";
+import { Github, Instagram, Linkedin } from '@lucide/astro'
+import About from '../components/landing-page/sections/About.astro'
+import Contact from '../components/landing-page/sections/Contact.astro'
+import Experience from '../components/landing-page/sections/Experience.astro'
+import Hero from '../components/landing-page/sections/Hero.astro'
+import Navbar from '../components/landing-page/sections/Navbar.astro'
+import Projects from '../components/landing-page/sections/Projects.astro'
+import Skills from '../components/landing-page/sections/Skills.astro'
+import Layout from '../layouts/Layout.astro'
+import '../styles/global.css';
 ---
 
 <Layout>
-    <div class="fixed flex items-center gap-4 -bottom-4 right-10 max-[952px]:right-4 max-[627px]:hidden origin-top-right rotate-90">
+    <div class="fixed flex items-center gap-4 bottom-0 right-10 max-[952px]:right-4 max-[627px]:hidden origin-top-right rotate-90 z-50">
         <a
-                href="mailto:younessmesbahy@gmail.com"
-                class="tracking-[0.25rem] text-xs hover:text-primary hover:-translate-x-1 duration-300"
-                target="_blank"
+          href="mailto:younessmesbahy@gmail.com"
+          class="tracking-[0.25rem] text-xs hover:text-primary hover:-translate-x-1 duration-300"
+          target="_blank"
         >younessmesbahy@gmail.com</a>
         <p class="h-[0.125rem] w-[8rem] bg-carbon-1400"></p>
     </div>
 
-    <div class="flex flex-col items-center gap-6 fixed left-10 max-[952px]:left-4 max-[627px]:hidden bottom-0">
+    <div class="flex flex-col items-center gap-6 fixed left-10 max-[952px]:left-4 max-[627px]:hidden bottom-0 z-50">
         <a href="https://www.instagram.com/youness.el.mesbahy/" target="_blank" rel="noreferrer" aria-label="Instagram">
-            <Instagram class="hover:text-primary duration-300"/>
+            <Instagram class="hover:text-primary duration-300" />
         </a>
         <a href="https://www.linkedin.com/in/youness-el-mesbahy-7327992b8" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <Linkedin class="hover:text-primary duration-300"/>
+            <Linkedin class="hover:text-primary duration-300" />
         </a>
         <a href="https://github.com/youness-el-mesbahy" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <Github class="hover:text-primary duration-300"/>
+            <Github class="hover:text-primary duration-300" />
         </a>
         <p class="w-[0.125rem] h-[8rem] bg-carbon-1400"></p>
     </div>
     <main id="main-content">
         <div class="h-full">
-            <Navbar/>
-            <Hero/>
+            <Navbar />
+            <Hero />
         </div>
-        <About/>
-        <Experience/>
-        <Projects/>
-        <Skills/>
-        <Contact/>
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Contact />
     </main>
 </Layout>
 
