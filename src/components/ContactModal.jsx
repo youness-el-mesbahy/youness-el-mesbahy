@@ -32,7 +32,7 @@ export default function ContactModal() {
         </Button>
       </Modal.Open>
 
-      <Modal.Window name="contact">
+      <Modal.Window name="contact" ariaLabel="Contact form">
         <ContactFormWrapper />
       </Modal.Window>
     </Modal>

@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 const ModalContext = createContext(null)
 
@@ -28,22 +30,71 @@ function Open({ children, opens }) {
   })
 }
 
-function Window({ children, name }) {
+function Window({ children, name, ariaLabel = "Dialog" }) {
   const { openName, close } = useModal();
-  const [isRendered, setIsRendered] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isRendered, setIsRendered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const panelRef = useRef(null);
+  const previousFocusRef = useRef(null);
 
-  React.useEffect(() => {
+  const trapFocus = useCallback((e) => {
+    if (e.key === 'Escape') {
+      close();
+      return;
+    }
+    if (e.key !== 'Tab') return;
+
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const focusable = panel.querySelectorAll(FOCUSABLE_SELECTOR);
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }, [close]);
+
+  useEffect(() => {
     if (openName === name) {
+      previousFocusRef.current = document.activeElement;
       setIsRendered(true);
-      const timer = setTimeout(() => setIsVisible(true), 10);
-      return () => clearTimeout(timer);
+      const renderTimer = setTimeout(() => setIsVisible(true), 10);
+      return () => clearTimeout(renderTimer);
     } else {
       setIsVisible(false);
-      const timer = setTimeout(() => setIsRendered(false), 200); // Matches duration-400
-      return () => clearTimeout(timer);
+      const hideTimer = setTimeout(() => {
+        setIsRendered(false);
+        previousFocusRef.current?.focus();
+        previousFocusRef.current = null;
+      }, 200);
+      return () => clearTimeout(hideTimer);
     }
   }, [openName, name]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const firstFocusable = panel.querySelector(FOCUSABLE_SELECTOR);
+    firstFocusable?.focus();
+
+    document.addEventListener('keydown', trapFocus);
+    return () => document.removeEventListener('keydown', trapFocus);
+  }, [isVisible, trapFocus]);
 
   if (!isRendered) return null;
 
@@ -54,6 +105,10 @@ function Window({ children, name }) {
         }`}
     >
       <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={ariaLabel}
         onClick={(e) => e.stopPropagation()}
         className={`fixed bottom-0 left-1/2 h-[85vh] w-[calc(100vw-1.875rem)] -translate-x-1/2 rounded-t-2xl border border-carbon-200 bg-white p-8 dark:border-carbon-800 dark:bg-carbon-950 transform transition-all duration-400 ease-in-out ${isVisible ? 'translate-y-0' : 'translate-y-full'
           }`}
@@ -64,7 +119,6 @@ function Window({ children, name }) {
     document.body
   );
 }
-
 
 Modal.Open = Open
 Modal.Window = Window
