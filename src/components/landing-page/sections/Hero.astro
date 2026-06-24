@@ -1,13 +1,8 @@
 ---
-import { Copy, Send, MoveRight } from '@lucide/astro'
-import Button from '../../ui/Button.astro'
-import { Github, Instagram, Linkedin } from '@lucide/astro'
+import { Copy, Github, Instagram, Linkedin, MoveRight } from '@lucide/astro'
 
-import { Image } from 'astro:assets'
-import HeroImage from '../../../assets/my-img.jpeg'
-import ContactF from '../../ui/ContactF.astro'
-import Modal from '../../ui/Modal'
 import ContactModal from '../../ContactModal'
+import Button from '../../ui/Button.astro'
 ---
 
 <section class="pb-24 max-[696px]:pb-16">
@@ -69,9 +64,10 @@ import ContactModal from '../../ContactModal'
                 aria-label="Copy email"
                 className="max-[330px]:w-full text-nowrap"
               >
-                <Copy size="1.25rem" />
-                &nbsp;Copy Email
+                <span id="copy-icon-hero"><Copy size="1.25rem" /></span>
+                <span id="copy-text-hero">&nbsp;Copy Email</span>
               </Button>
+              <span id="copy-live-hero" class="sr-only" aria-live="polite" role="status"></span>
             </div>
             <div class="hidden items-center gap-4 max-[627px]:flex">
               <a href="https://github.com/youness-el-mesbahy" target="_blank" rel="noreferrer" aria-label="GitHub">
@@ -112,10 +108,25 @@ import ContactModal from '../../ContactModal'
 </section>
 
 <script>
-  const copyBtn = document.getElementById('copy-email-hero')
-  copyBtn?.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText('younessmesbahy@gmail.com')
-    } catch (e) {}
-  })
+const copyBtn = document.getElementById('copy-email-hero')
+const copyLive = document.getElementById('copy-live-hero')
+
+const originalHtml = copyBtn?.innerHTML
+
+copyBtn?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText('younessmesbahy@gmail.com')
+    copyBtn.innerHTML
+      = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>&nbsp;Copied!'
+    if (copyLive)
+      copyLive.textContent = 'Email copied to clipboard'
+    setTimeout(() => {
+      copyBtn.innerHTML = originalHtml
+    }, 2000)
+  }
+  catch {
+    if (copyLive)
+      copyLive.textContent = 'Failed to copy email'
+  }
+})
 </script>
