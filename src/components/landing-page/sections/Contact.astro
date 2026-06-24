@@ -1,11 +1,11 @@
 ---
-import Section from "../Section.astro";
-import {Copy} from "@lucide/astro";
-import Button from "../../ui/Button.astro";
-import ContactModal from "../../ContactModal";
+import { Copy } from '@lucide/astro'
+import ContactModal from '../../ContactModal'
+import Button from '../../ui/Button.astro'
+import Section from '../Section.astro';
 ---
 
-<Section id="contact" className="pb-64" title="6.&nbsp;What's Next?">
+<Section id="contact" className="pb-64" title="What's Next?">
     <div class="mt-20 mx-auto text-center max-w-[38vw] max-[810px]:max-w-[70vw]">
         <h3 class="font-semibold text-4xl">Get In Touch</h3>
         <p class="mt-4 text-lg">
@@ -14,7 +14,7 @@ import ContactModal from "../../ContactModal";
         <div class="flex justify-center text-nowrap gap-8 mt-10">
                 <ContactModal client:only="react" />
             <Button id="copy-email-contact" variant="secondary" aria-label="Copy email">
-                <Copy size="1.25rem"/>
+                <Copy size="1.25rem" />
                 &nbsp;Copy Email
             </Button>
         </div>
@@ -22,11 +22,12 @@ import ContactModal from "../../ContactModal";
 </Section>
 
 <script>
-    const copyBtn = document.getElementById('copy-email-contact');
-    copyBtn?.addEventListener('click', async () => {
-        try {
-            await navigator.clipboard.writeText('younessmesbahy@gmail.com');
-        } catch (e) {
-        }
-    });
+const copyBtn = document.getElementById('copy-email-contact')
+copyBtn?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText('younessmesbahy@gmail.com')
+  }
+  catch {
+  }
+})
 </script>

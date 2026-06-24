@@ -1,19 +1,19 @@
 ---
-import Section from "../Section.astro";
-import Card from "../../ui/Card.astro";
-import {MoveRight} from "@lucide/astro";
+import { getCollection } from 'astro:content'
+import Card from '../../ui/Card.astro'
 
-import {getCollection} from "astro:content";
-const projects = await getCollection("projects");
+import Section from '../Section.astro'
+
+const projects = await getCollection('projects');
 ---
 
 <Section
-        id="projects"
-        title="4.&nbsp;Projects"
-        subtitle="A selection of projects I've built and contributed to"
+  id="projects"
+  title="Projects"
+  subtitle="A selection of projects I've built and contributed to"
 >
     <div class="my-16  grid grid-cols-3 gap-4 max-[408px]:gap-4  max-[1116px]:grid-cols-2 max-[810px]:grid-cols-1  items-stretch ">
-        {projects.map((project) => (
+        {projects.map(project => (
                 <Card project={project} />
         ))}
     </div>
