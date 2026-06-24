@@ -12,6 +12,7 @@ function ContactFormWrapper() {
     <button
       type="button"
       id="modal-close-btn"
+      aria-label="Close modal"
       onClick={close}
       className="p-2 text-carbon-1400 hover:bg-carbon-100 dark:hover:bg-carbon-800 duration-300 rounded-sm"
     >
