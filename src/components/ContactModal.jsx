@@ -1,12 +1,11 @@
-import React from 'react';
-import Modal, { useModal } from './ui/Modal.jsx';
-import ContactF from './ui/ContactF.jsx';
-import { X, Send } from "lucide-react";
-import Button from './ui/Button.jsx';
+import { Send, X } from 'lucide-react'
+import Button from './ui/Button.jsx'
+import ContactF from './ui/ContactF.jsx'
+import Modal, { useModal } from './ui/Modal.jsx'
 
 // Wrapper to bridge the Modal context to ContactF
 function ContactFormWrapper() {
-  const { close } = useModal();
+  const { close } = useModal()
 
   const closeBtn = (
     <button
@@ -18,9 +17,9 @@ function ContactFormWrapper() {
     >
       <X size="1.125rem" />
     </button>
-  );
+  )
 
-  return <ContactF closeBtn={closeBtn} onCancel={close} />;
+  return <ContactF closeBtn={closeBtn} onCancel={close} />
 }
 
 export default function ContactModal() {
@@ -37,5 +36,5 @@ export default function ContactModal() {
         <ContactFormWrapper />
       </Modal.Window>
     </Modal>
-  );
+  )
 }
