@@ -1,43 +1,52 @@
 ---
-import {Image} from "astro:assets"
-import myImage from "../../../assets/younesselmesbahy-face.png"
+import { Moon, Sun } from '@lucide/astro'
+import { Image } from 'astro:assets'
 
-import {Moon,Sun,Menu} from "@lucide/astro"
-import Button from "../../ui/Button.astro";
+import myImage from '../../../assets/younesselmesbahy-face.png'
 ---
 
 <header id="home" class="flex items-center justify-between mx-16 max-[731px]:mx-12 max-[408px]:mx-8 my-8">
     <div class="flex items-center gap-3">
         <div class="logo h-[2.25rem] w-[2.25rem] rounded-full overflow-hidden bg-gray-500">
-            <Image src={myImage} alt="Youness El Mesbahy" width={36} height={36} fetchpriority="high"/>
+            <Image src={myImage} alt="Youness El Mesbahy" width={36} height={36} fetchpriority="high" />
         </div>
         <p>Youness El Mesbahy</p>
     </div>
     <nav class="inline-block max-[952px]:hidden">
         <ul class="space-x-10">
-            <li class="inline-block"><a href="#home"><span
-                    class="text-oregon-blue-1200 inline-block">1.&nbsp;</span><span
-                    class="hover:text-oregon-blue-1200 hover: duration-300">Home</span></a></li>
-            <li class="inline-block"><a href="#projects"><span
-                    class="text-oregon-blue-1200 inline-block">2.&nbsp;</span><span
-                    class="hover:text-oregon-blue-1200 hover: duration-300">Projects</span></a></li>
-            <li class="inline-block"><a href="#about"><span
-                    class="text-oregon-blue-1200 inline-block">3.&nbsp;</span><span
-                    class="hover:text-oregon-blue-1200 hover: duration-300">About Me</span></a></li>
-            <li class="inline-block"><a href="#skills"><span
-                    class="text-oregon-blue-1200 inline-block">4.&nbsp;</span><span
-                    class="hover:text-oregon-blue-1200 hover: duration-300">Skills</span></a></li>
-            <li class="inline-block"><a href="#contact"><span
-                    class="text-oregon-blue-1200 inline-block">5.&nbsp;</span><span
-                    class="hover:text-oregon-blue-1200 hover: duration-300">Contact</span></a></li>
+            <li class="inline-block"><a href="#home" class="nav-link group"><span
+              class="text-oregon-blue-1200 group-hover:text-primary inline-block"
+                                                                            >1.&nbsp;</span><span
+                                                                              class="hover:text-primary duration-300"
+                                                                                            >Home</span></a></li>
+            <li class="inline-block"><a href="#projects" class="nav-link group"><span
+              class="text-oregon-blue-1200 group-hover:text-primary inline-block"
+                                                                                >2.&nbsp;</span><span
+                                                                                  class="hover:text-primary duration-300"
+                                                                                                >Projects</span></a></li>
+            <li class="inline-block"><a href="#about" class="nav-link group"><span
+              class="text-oregon-blue-1200 group-hover:text-primary inline-block"
+                                                                             >3.&nbsp;</span><span
+                                                                               class="hover:text-primary duration-300"
+                                                                                             >About Me</span></a></li>
+            <li class="inline-block"><a href="#skills" class="nav-link group"><span
+              class="text-oregon-blue-1200 group-hover:text-primary inline-block"
+                                                                              >4.&nbsp;</span><span
+                                                                                class="hover:text-primary duration-300"
+                                                                                              >Skills</span></a></li>
+            <li class="inline-block"><a href="#contact" class="nav-link group"><span
+              class="text-oregon-blue-1200 group-hover:text-primary inline-block"
+                                                                               >5.&nbsp;</span><span
+                                                                                 class="hover:text-primary duration-300"
+                                                                                               >Contact</span></a></li>
         </ul>
     </nav>
     <div class="inline-block ">
         <div class="flex items-center gap-5 max-[952px]:hidde">
             <!--<p>EN</p>-->
             <button id="toggle-theme" aria-label="Toggle dark mode">
-                <Moon size="1.25rem" class="dark:hidden"/>
-                <Sun size="1.25rem" class="hidden dark:block"/>
+                <Moon size="1.25rem" class="dark:hidden" />
+                <Sun size="1.25rem" class="hidden dark:block" />
             </button>
         </div>
         <!--<div>-->
@@ -50,26 +59,44 @@ import Button from "../../ui/Button.astro";
 </header>
 
 <script>
+if (!localStorage.getItem('theme'))
+  localStorage.setItem('theme', 'dark')
 
+const html = document.documentElement
 
-    if (!localStorage.getItem('theme'))
-        localStorage.setItem('theme', 'light')
+function toggleTheme() {
+  const currentTheme = localStorage.getItem('theme')
 
+  if (currentTheme === 'light') {
+    localStorage.setItem('theme', 'dark')
+    html.dataset.theme = 'dark'
+  }
+  else {
+    localStorage.setItem('theme', 'light')
+    html.dataset.theme = 'light'
+  }
+}
 
-    const html = document.documentElement;
-
-    function toggleTheme() {
-        const currentTheme = localStorage.getItem('theme')
-
-        if (currentTheme === 'light') {
-            localStorage.setItem("theme", "dark");
-            html.dataset.theme = "dark";
-        } else {
-            localStorage.setItem("theme", "light");
-            html.dataset.theme = "light";
-        }
-    }
-
-    document.getElementById("toggle-theme")?.addEventListener("click", toggleTheme)
-
+document.getElementById('toggle-theme')?.addEventListener('click', toggleTheme)
 </script>
+
+<style>
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+</style>
