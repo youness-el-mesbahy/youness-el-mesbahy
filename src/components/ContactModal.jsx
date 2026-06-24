@@ -27,7 +27,7 @@ export default function ContactModal() {
   return (
     <Modal>
       <Modal.Open opens="contact">
-        <Button className="max-[330px]:w-full">
+        <Button className="max-[330px]:w-full text-nowrap">
           <Send size="1.25rem" />
           &nbsp;Contact Me
         </Button>

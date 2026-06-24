@@ -1,7 +1,7 @@
 ---
 import Container from "../../ui/Container.astro";
 import {Image} from "astro:assets";
-import HeroImage from "../../../assets/my-img.jpeg"
+import HeroImage from "../../../assets/younesselmesbahy.png"
 import SectionHeader from "../../ui/SectionHeader.astro";
 import {Download} from "@lucide/astro"
 import {getCollection} from "astro:content";
@@ -10,7 +10,7 @@ const about = await getCollection("about");
 const aboutContent = about[0];
 ---
 
-<section id="about" class="py-16">
+<section id="about" class="py-24">
     <Container>
         <SectionHeader
                 title="2.&nbsp;About"
@@ -18,13 +18,13 @@ const aboutContent = about[0];
         />
 
         <div class="mt-20 flex justify-center items-start gap-32 max-[942px]:gap-12 max-[942px]:flex-col max-[942px]:items-center  ">
-            <div class="max-w-[60%] max-[942px]:max-w-[80vw]">
+            <div class="max-w-[50%] max-[942px]:max-w-[80vw]">
                 <div class="space-y-3">
-                    {aboutContent && aboutContent.data.summary.map((paragraph) => (
+                    {aboutContent && aboutContent.data.summary.slice(0, 2).map((paragraph) => (
                             <p>{paragraph}</p>
                     ))}
                 </div>
-                <a href="/Youness-El-Mesbahy.pdf" target="_blank" class="inline-block mt-6">
+                <a href="/CV_Youness_El_Mesbahy_FullStack.pdf" target="_blank" class="inline-block mt-6">
                     <Button>
                         <Download size="1.25rem"/>
                         &nbsp; Download CV
@@ -33,7 +33,7 @@ const aboutContent = about[0];
             </div>
             <div class="relative max-[942px]:-translate-x-3">
                 <div class="max-h-[400px] max-w-[400px] overflow-hidden flex items-center justify-center bg-carbon-700 rounded-lg">
-                    <Image src={HeroImage} alt="Youness El Mesbahy portrait" width={400} height={533}/>
+                    <Image src={HeroImage} alt="Youness El Mesbahy portrait" width={400} height={400}/>
                 </div>
                 <div
                         class="w-full h-full  absolute rounded-lg z-[-1] border-primary border-2 top-0 left-0 translate-x-6 translate-y-6"
