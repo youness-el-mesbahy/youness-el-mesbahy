@@ -6,15 +6,40 @@ import Button from './Button.jsx';
 import Modal from './Modal.jsx'
 
 const WEB3FORMS_KEY = "e5254867-504d-440b-9af1-bf4f4c4c73a3";
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const ContactF = ({ closeBtn, onCancel }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("idle");
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+        if (!name.trim()) newErrors.name = "Name is required";
+        if (!email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!EMAIL_REGEX.test(email)) {
+            newErrors.email = "Please enter a valid email";
+        }
+        if (!message.trim()) newErrors.message = "Message is required";
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const clearError = (field) => {
+        setErrors((prev) => {
+            const next = { ...prev };
+            delete next[field];
+            return next;
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!validate()) return;
+
         setStatus("loading");
 
         const formData = new FormData();
@@ -34,6 +59,7 @@ const ContactF = ({ closeBtn, onCancel }) => {
                 setName("");
                 setEmail("");
                 setMessage("");
+                setErrors({});
                 setTimeout(() => setStatus("idle"), 3000);
             } else {
                 setStatus("error");
@@ -46,12 +72,12 @@ const ContactF = ({ closeBtn, onCancel }) => {
     };
 
     const submitText = status === "loading" ? "Sending..." : status === "success" ? "Sent!" : status === "error" ? "Failed!" : "Send";
-    const submitVariant = status === "success" ? "primary" : status === "error" ? "primary" : "primary";
 
     return (
         <form
             id="contact-form"
             onSubmit={handleSubmit}
+            noValidate
             className="py-6  px-16 max-[567px]:px-[3%] rounded-sm mx-auto w-1/2 max-[1153px]:w-2/3 max-[1116px]:w-3/4 max-[955px]:w-[93%]"
         >
             <div className="flex justify-between items-center">
@@ -61,12 +87,24 @@ const ContactF = ({ closeBtn, onCancel }) => {
                 {closeBtn}
             </div>
 
-            <div className="mt-12 grid grid-cols-1 min-[567px]:grid-cols-2 items-center gap-5">
-                <Input label="Name" placeholder="Your Name" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                <Input label="Email" placeholder="Your Email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <div className="mt-12 grid grid-cols-1 min-[567px]:grid-cols-2 items-start gap-5">
+                <Input
+                    label="Name" placeholder="Your Name" id="name" type="text" required
+                    value={name} error={errors.name}
+                    onChange={(e) => { setName(e.target.value); clearError("name"); }}
+                />
+                <Input
+                    label="Email" placeholder="Your Email" id="email" type="email" required
+                    value={email} error={errors.email}
+                    onChange={(e) => { setEmail(e.target.value); clearError("email"); }}
+                />
 
                 <div className="col-span-1 min-[567px]:col-span-2">
-                    <TextArea label="Message" placeholder="Your Message" id="message" value={message} onChange={(e) => setMessage(e.target.value)} />
+                    <TextArea
+                        label="Message" placeholder="Your Message" id="message" required
+                        value={message} error={errors.message}
+                        onChange={(e) => { setMessage(e.target.value); clearError("message"); }}
+                    />
                 </div>
 
                 <Button
@@ -86,12 +124,12 @@ const ContactF = ({ closeBtn, onCancel }) => {
             </div>
 
             {status === "success" && (
-                <p className="mt-4 text-center text-green-600 dark:text-green-400 font-semibold">
+                <p className="mt-4 text-center text-green-600 dark:text-green-400 font-semibold" role="status">
                     Message sent successfully!
                 </p>
             )}
             {status === "error" && (
-                <p className="mt-4 text-center text-red-600 dark:text-red-400 font-semibold">
+                <p className="mt-4 text-center text-red-600 dark:text-red-400 font-semibold" role="alert">
                     Something went wrong. Please try again.
                 </p>
             )}
